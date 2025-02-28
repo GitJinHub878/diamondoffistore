@@ -315,7 +315,7 @@
 
         async function fetchPlugins() {
             try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbxrGbwXN8qNoVeVJ0k-2Wk5HKH5vErhEE3utqZk8YukEA_IDrazLAlTHNnxjjorZ1ZDEA/exec');
+                const response = await fetch();
                 const plugins = await response.json();
                 pluginsData = plugins;
                 displayPlugins(plugins);
