@@ -8,30 +8,32 @@
         /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #121212;
+            background-color: #0a0a0a; /* Darker background */
             color: white;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column; /* Stack elements vertically on mobile */
         }
 
         /* Top Buttons */
         .top-buttons {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
             display: flex;
             gap: 10px;
+            z-index: 1000; /* Ensure buttons are above other content */
         }
 
         .top-buttons button {
             background-color: #5865F2;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             transition: background 0.3s ease;
         }
 
@@ -44,10 +46,10 @@
             background-color: #5865F2;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             transition: background 0.3s ease;
         }
 
@@ -58,7 +60,7 @@
         /* Sidebar */
         #sidebar {
             width: 200px;
-            background: #1f1f1f;
+            background: #1a1a1a; /* Darker sidebar */
             padding: 20px;
             height: 100vh;
             box-shadow: 2px 0 10px rgba(255, 153, 0, 0.2);
@@ -94,6 +96,7 @@
             margin-left: 220px;
             flex-grow: 1;
             text-align: center;
+            padding: 20px;
         }
 
         /* Header */
@@ -133,7 +136,7 @@
 
         /* Plugin Card */
         .plugin-card {
-            background: #1f1f1f;
+            background: #1a1a1a; /* Darker card background */
             padding: 20px;
             border-radius: 10px;
             width: 300px;
@@ -213,6 +216,60 @@
 
         .purchase-button:hover {
             background-color: #e68000;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
+                box-shadow: none;
+            }
+
+            #content {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+                padding: 15px;
+            }
+
+            #search-bar {
+                width: 90%;
+                font-size: 14px;
+            }
+
+            .plugin-card {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .plugin-title {
+                font-size: 18px;
+            }
+
+            .plugin-description {
+                font-size: 12px;
+            }
+
+            .top-buttons {
+                position: static;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .top-buttons button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
